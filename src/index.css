@@ -1,0 +1,251 @@
+:root {
+  --color1: #22223B;
+  --color2: #4A4E69;
+  --color3: #9A8C98;
+  --color4: #C9ADA7;
+  --color5: #F2E9E4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color5);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.page {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  padding: 6rem 0px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type="submit"], button {
+  outline: none;
+  border: none;
+  padding: 6px 16px;
+  background-color: var(--color2);
+  color: var(--color5);
+  cursor: pointer;
+  margin: 0px 20px 20px 0px;
+}
+
+input[type="submit"]:hover, button:hover {
+  background-color: var(--color1);
+}
+
+/* Navbar */
+header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+  background-color: var(--color1);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+}
+
+header .logo {
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--color4);
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 100%;
+}
+
+header nav ul li {
+  height: 100%;
+}
+
+header nav ul li a {
+  color: var(--color5);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+header nav ul li:hover a {
+  border-bottom: 1px solid var(--color5);
+}
+
+/* Spinner */
+.spinner_page {
+  display: grid;
+  place-items: center;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #22223b 94%, #0000) top/9px 9px no-repeat,
+    conic-gradient(#0000 30%, #22223b);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+  animation: spinner-c7wet2 1s infinite linear;
+}
+
+@keyframes spinner-c7wet2 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+/* User Page */
+.user_page,
+.profile_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user_page .title,
+.profile_page .title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color1);
+  margin-bottom: 20px;
+}
+
+.user_page form,
+.profile_page form {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user_page form .form_group,
+.profile_page form .form_group {
+  display: flex;
+  width: 360px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user_page form .form_group label,
+.profile_page form .form_group label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color2);
+}
+
+.user_page form .form_group input[type="text"],
+.user_page form .form_group input[type="number"],
+.profile_page form .form_group input[type="text"],
+.profile_page form .form_group input[type="number"] {
+  background-color: var(--color4);
+  margin: 0;
+  padding: 0;
+  padding: 4px 14px;
+  outline: 2px solid transparent;
+  width: 55%;
+  color: var(--color2);
+}
+
+.profile_page form .form_group .filterForm {
+  width: 100%;
+}
+
+.user_page form .form_group input[type="text"]:focus,
+.user_page form .form_group input[type="number"]:focus,
+.profile_page form .form_group input[type="text"]:focus,
+.profile_page form .form_group input[type="number"]:focus {
+  outline: 2px solid var(--color2);
+  outline-offset: 2px;
+}
+
+/* Profile Page */
+.profile_page form {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile {
+  height: auto;
+  padding: 10px 20px 0px;
+  margin: 10px 0px 20px 0px;
+  position: relative;
+  border: 2px solid var(--color2);
+  min-width: 400px;
+}
+
+.profile table {
+  margin-bottom: 20px;
+}
+
+.profile table tbody tr th {
+  text-align: start;
+}
+
+.profile table tbody tr th,
+.profile table tbody tr td {
+  padding: 8px 10px;
+}
+
+.profile .btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.msg {
+  color: var(--color2);
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  padding: 2rem 0rem;
+  background-color: var(--color1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer h1 {
+  color: var(--color4);
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+@media screen and (max-width: 800px) {
+  footer h1 span {
+    display: block;
+    text-align: center;
+  }
+}
